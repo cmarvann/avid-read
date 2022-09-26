@@ -12,10 +12,7 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
-  title: {
-    type: String,
-    required: true,
-  },
+  
   // saved book id from GoogleBooks
   bookId: {
     type: String,
@@ -35,7 +32,7 @@ const bookSchema = new Schema({
 }
 );
 
-bookSchema.virtual('optionCount').get(function() {
+bookSchema.virtual('bookCount').get(function() {
   return this.options.length;
 });
 
