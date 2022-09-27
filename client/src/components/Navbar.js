@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
@@ -16,7 +15,7 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Deep-Read Book Search
+            Google Books Search
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
@@ -30,16 +29,10 @@ const AppNavbar = () => {
                   <Nav.Link as={Link} to='/saved'>
                     See Your Books
                   </Nav.Link>
-                
-                  <Nav.Link onClick={Auth.logout}>
-                    Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <>
-                <Nav.Link onClick={() => setShowModal(true)}>Logout</Nav.Link>
-                <Nav.Link onClick={() => setShowModal(true)}>Login</Nav.Link>
-                <Nav.Link onClick={() => setShowModal(true)}>Sign Up</Nav.Link>
-                </>
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
