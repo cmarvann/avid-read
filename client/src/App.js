@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink,} from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {CardColums} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 // import CardColumns from 'react-bootstrap/CardColumns';
 
 import SearchBooks from './pages/SearchBooks';
@@ -35,7 +35,7 @@ const client = new ApolloClient({
 function App() {
   
   return (
-    <CardColums>
+    <Container>
     <ApolloProvider client={client}>
     <Router>
       <>
@@ -50,11 +50,12 @@ function App() {
           <Route 
           render={() => 
           <h1 className='display-2'>Wrong page!</h1>} />
+          
         </Routes>
       </>
     </Router>
     </ApolloProvider>
-    </CardColums>
+    </Container>
 
   );
 }

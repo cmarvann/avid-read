@@ -32,7 +32,7 @@ module.exports = {
     }
 
     // send to next endpoint
-    // next();
+    next();
   },
 
   signToken: function ({ username, email, _id }) {
